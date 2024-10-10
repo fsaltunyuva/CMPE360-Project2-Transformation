@@ -62,8 +62,8 @@ code in the project2.html file.
 
 Figure 1 : When you run firstly, you will see this screen:
 
-![Figure 1](placeholder.png)
+![Figure 1](https://github.com/fsaltunyuva/CMPE360-Project2-Transformation/blob/main/README%20Figures/Figure%201.png)
 
 Figure 2: After finishing the work, you will see this screen:
 
-![Figure 2](placeholder.png)
+![Figure 2](https://github.com/fsaltunyuva/CMPE360-Project2-Transformation/blob/main/README%20Figures/Figure%202.png)
