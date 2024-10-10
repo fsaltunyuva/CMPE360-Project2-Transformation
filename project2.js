@@ -49,8 +49,8 @@ function ApplyTransform(trans1, trans2) {
 //You will write the function for ResetTransform
 //This function resets the drone’s position, rotation, scale, and altitude
 function resetTransform() {
-    drone.positionX = 0; // Reset the position X
-    drone.positionY = 0; // Reset the position Y
+    drone.positionX = window.innerWidth / 2; // Reset the position X to the center of the window (from https://stackoverflow.com/questions/39203250/center-position-of-current-screen-position)
+    drone.positionY = window.innerHeight / 2; // Reset the position Y to the center of the window (from https://stackoverflow.com/questions/39203250/center-position-of-current-screen-position)
     drone.rotation = 0; // Reset the rotation
     drone.scale = 1; // Reset the scale
     drone.altitude = 0; // Reset the altitude
@@ -76,15 +76,14 @@ function hoverMode() {
     drone.speed = 0; // Stop the drone from moving horizontally
 }
 
-//You will write the function for  mouseMovement
+//You will write the function for mouseMovement
 //The drone follows the mouse unless it is in hover modes
 function mouseMovement() {
-    //TODO: Ask about the implementation of the mouseMovement function (There is no method called mouseMovement in the HTML code)
-    window.removeEventListener('mousemove', Movedrone); // Remove the previous event listener which does not control if the drone is in hover mode
+    window.removeEventListener('mousemove', Movedrone); // Ensure old listeners are removed
 
     window.addEventListener('mousemove', function(event) {
         // Check if the drone is in hover mode (altitude = 50 and speed = 0)
-        if (drone.altitude === 50 && drone.speed === 0) {
+        if (drone.speed === 0) {
             // If in hover mode, do nothing (drone shouldn't follow the mouse)
             return;
         }
