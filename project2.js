@@ -73,7 +73,10 @@ function boostSpeed() {
 //Increases the altitude to 50 units and stops the drone from moving horizontally.
 function hoverMode() {
     drone.altitude = 50; // Increase the altitude to 50 units
-    drone.speed = 0; // Stop the drone from moving horizontally
+    //drone.speed = 0; // Stop the drone from moving horizontally
+
+    //TODO: Stop the drone from moving horizontally
+    //TODO: Record the demo video
 }
 
 //You will write the function for mouseMovement
@@ -83,7 +86,7 @@ function mouseMovement() {
 
     window.addEventListener('mousemove', function(event) {
         // Check if the drone is in hover mode (altitude = 50 and speed = 0)
-        if (drone.speed === 0) {
+        if (drone.speed === 0) { //TODO: If you change the hover mode logic, update this condition
             // If in hover mode, do nothing (drone shouldn't follow the mouse)
             return;
         }
