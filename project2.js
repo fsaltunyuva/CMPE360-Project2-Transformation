@@ -79,7 +79,8 @@ function hoverMode() {
 //You will write the function for  mouseMovement
 //The drone follows the mouse unless it is in hover modes
 function mouseMovement() {
-    window.removeEventListener('mousemove', Movedrone);
+    //TODO: Ask about the implementation of the mouseMovement function (There is no method called mouseMovement in the HTML code)
+    window.removeEventListener('mousemove', Movedrone); // Remove the previous event listener which does not control if the drone is in hover mode
 
     window.addEventListener('mousemove', function(event) {
         // Check if the drone is in hover mode (altitude = 50 and speed = 0)
