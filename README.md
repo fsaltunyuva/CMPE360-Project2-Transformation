@@ -36,7 +36,7 @@ transformation should initially incorporate trans1, followed by trans2. This sec
 essential for applying the localized transformations of the four propellers prior to applying the
 transformation of the Drone body. This is how the propeller are correctly positioned.
 
-You will write the following func on also:
+You will write the following function also:
 
 - **resetTransform**: This function resets the drone’s position, rotation, scale, and altitude. 
 - **boostSpeed**: Temporarily increases the drone's speed for 5 seconds and then resets it to
@@ -57,7 +57,7 @@ To assist you in this project, you have been provided with the following files:
 Your task is to complete the six functions in the project2.js file so that the UAV moves in tandem
 with its shadow.
 
-It is advisable to review how the en re application is structured by examining the JavaScript
+It is advisable to review how the entire application is structured by examining the JavaScript
 code in the project2.html file.
 
 Figure 1 : When you run firstly, you will see this screen:
