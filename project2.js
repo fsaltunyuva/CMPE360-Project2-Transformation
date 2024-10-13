@@ -81,7 +81,8 @@ function hoverMode() {
     // drone.speed = 0; // Stop the drone from moving horizontally
     isHovering = true; // Enable the hover mode
 
-    // Disable the 'a' and 'd' keys to prevent horizontal movement during hover mode in HTML file
+    // Disable the 'a' and 'd' keys in KeyDown function of the HTML file
+    // to prevent horizontal movement during hover mode
 }
 
 //You will write the function for mouseMovement
@@ -90,8 +91,7 @@ function mouseMovement() {
     window.removeEventListener('mousemove', Movedrone); // Ensure old listeners are removed
 
     window.addEventListener('mousemove', function(event) {
-        // Check if the drone is in hover mode (altitude = 50 and speed = 0)
-        if (drone.altitude === 50) {
+        if (isHovering) {
         // If in hover mode, do nothing (drone shouldn't follow the mouse)
             return;
         }
