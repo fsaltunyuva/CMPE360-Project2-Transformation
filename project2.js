@@ -45,6 +45,7 @@ function ApplyTransform(trans1, trans2) {
     return result;
 }
 
+var isHovering = false; // Hover mode boolean
 
 //You will write the function for ResetTransform
 //This function resets the drone’s position, rotation, scale, and altitude
@@ -54,6 +55,7 @@ function resetTransform() {
     drone.rotation = 0; // Reset the rotation
     drone.scale = 1; // Reset the scale
     drone.altitude = 0; // Reset the altitude
+    isHovering = false; // Reset the hover mode
 }
 
 
@@ -71,14 +73,15 @@ function boostSpeed() {
     }
 }
 
+
 //You will write the function for hoverMode
 //Increases the altitude to 50 units and stops the drone from moving horizontally.
 function hoverMode() {
     drone.altitude = 50; // Increase the altitude to 50 units
-    //drone.speed = 0; // Stop the drone from moving horizontally
+    // drone.speed = 0; // Stop the drone from moving horizontally
+    isHovering = true; // Enable the hover mode
 
-    //TODO: Stop the drone from moving horizontally
-    //TODO: Record the demo video
+    // Disable the 'a' and 'd' keys to prevent horizontal movement during hover mode in HTML file
 }
 
 //You will write the function for mouseMovement
@@ -88,8 +91,8 @@ function mouseMovement() {
 
     window.addEventListener('mousemove', function(event) {
         // Check if the drone is in hover mode (altitude = 50 and speed = 0)
-        if (drone.speed === 0) { //TODO: If you change the hover mode logic, update this condition
-            // If in hover mode, do nothing (drone shouldn't follow the mouse)
+        if (drone.altitude === 50) {
+        // If in hover mode, do nothing (drone shouldn't follow the mouse)
             return;
         }
 
