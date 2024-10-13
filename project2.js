@@ -60,12 +60,14 @@ function resetTransform() {
 //You will write the function for boostSpeed
 //Temporarily increases the drone's speed for 5 seconds and then resets it to the normal speed.
 function boostSpeed() {
-    drone.speed = 10; // Increase the speed
+    // drone.speed += 25; // Increase the speed (does not work because speed is related to altitude)
+    drone.altitude += 25; // Increase the altitude
 
     // Reset the speed to normal after 5 seconds (from the tutorial https://www.w3schools.com/jsref/met_win_settimeout.asp)
     setTimeout(slowDown, 5000);
     function slowDown() {
-        drone.speed = 5;
+        //drone.speed = 0; // Does not work because speed is related to altitude
+        drone.altitude = 0;
     }
 }
 
